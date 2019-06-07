@@ -23,10 +23,10 @@ yarn add firebase-admin
 
 ### Add dotenv
 
-Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+```[dotenv](https://github.com/motdotla/dotenv#readme)``` is a zero-dependency module that loads environment variables from a .env file into process.env.
 
 ```
-yarn add [dotenv](https://github.com/motdotla/dotenv#readme)
+yarn add dotenv
 ```
 
 ### Add nodemon 
