@@ -1,17 +1,20 @@
 'use strict';
-require('dotenv').config();
-const express = require('express');
-const line = require('@line/bot-sdk');
-const app = express();
+
+require("dotenv").config();
+const express = require("express");
+const line = require("@line/bot-sdk");
 
 const config = {
     channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
     channelSecret: process.env.CHANNEL_SECRET
-};
-const port = process.env.PORT || 4000;
-const client = new line.Client(config);
-
-app.post(`/webhook`, line.middleware(config), (req, res) => {
+  };
+  
+  const app = express();
+  const port = process.env.PORT || 4000;
+  const client = new line.Client(config);
+  
+  
+  app.post(`/webhook`, line.middleware(config), (req, res) => {
     Promise.all(req.body.events.map(handleEvent))
       .then(result => res.json(result))
       .catch(err => {
@@ -20,7 +23,7 @@ app.post(`/webhook`, line.middleware(config), (req, res) => {
       });
   });
 
-async function handleEvent(event) {
+function handleEvent(event) {
     console.log(event);
     if (event.type === 'message' && event.message.type === 'text') {
         handleMessageEvent(event);
