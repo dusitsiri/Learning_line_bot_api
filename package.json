@@ -1,9 +1,8 @@
 {
-  "name": "learning_bot_api",
+  "name": "",
   "version": "1.0.0",
   "main": "server.js",
-  "repository": "https://github.com/dusitsiri/Learning_line_bot_api.git",
-  "author": "dusitsiri <dusit.siri12@gmail.com>",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "@line/bot-sdk": "^6.7.1",
