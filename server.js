@@ -20,7 +20,7 @@ app.post(`/webhook`, line.middleware(config), (req, res) => {
       });
   });
 
-function handleEvent(event) {
+async function handleEvent(event) {
     console.log(event);
     if (event.type === 'message' && event.message.type === 'text') {
         handleMessageEvent(event);
