@@ -34,7 +34,35 @@ function handleEvent(event) {
 function handleMessageEvent(event) {
   var eventText = event.message.text.toLowerCase();
 
-  if (eventText === "สั่งอาหาร")
+  if (eventText === "โปรโมชั่น"){
+    msg = {
+        "type": "template",
+        "altText": "this is a confirm template",
+        "template": {
+            "type": "confirm",
+            "text": "Are you sure?",
+            "actions": [{
+                "type": "message",
+                "label": "Yes",
+                "text": "yes"
+            }, {
+                "type": "message",
+                "label": "No",
+                "text": "no"
+            }]
+        }
+    }
+  }
+  else if (eventText === "เมนูแนะนำ") {
+    msg = {
+      type: "image",
+      originalContentUrl:
+        "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
+      previewImageUrl:
+        "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
+    };
+  }
+  else if (eventText === "สั่งอาหาร")
     var msg = {
       type: "template",
       altText: "this is a buttons template",
@@ -63,14 +91,68 @@ function handleMessageEvent(event) {
         ]
       }
     };
-  else if (eventText === "เมนูแนะนำ") {
+
+  else if (eventText === 'จองห้องคาราโอเกะ'){
     msg = {
-      type: "image",
-      originalContentUrl:
-        "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
-      previewImageUrl:
-        "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
-    };
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+                {
+                    "thumbnailImageUrl": "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
+                    "title": "this is menu",
+                    "text": "description",
+                    "actions": [
+                        {
+                            "type": "postback",
+                            "label": "Buy",
+                            "data": "action=buy&itemid=111"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "Add to cart",
+                            "data": "action=add&itemid=111"
+                        },
+                        {
+                            "type": "uri",
+                            "label": "View detail",
+                            "uri": "http://example.com/page/111"
+                        }
+                    ]
+                },
+                {
+                    "thumbnailImageUrl": "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
+                    "title": "this is menu",
+                    "text": "description",
+                    "actions": [
+                        {
+                            "type": "postback",
+                            "label": "Buy",
+                            "data": "action=buy&itemid=222"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "Add to cart",
+                            "data": "action=add&itemid=222"
+                        },
+                        {
+                            "type": "uri",
+                            "label": "View detail",
+                            "uri": "http://example.com/page/222"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+  }
+  else if (eventText === 'ประวัติการสั่งซื้อ'){
+    msg = {
+        "type": "sticker",
+        "packageId": "1",
+        "stickerId": "2568"
+      }
   }
   else if (eventText === 'ร้านปรีดาโภชนา') {
     msg = {
