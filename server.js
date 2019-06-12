@@ -34,26 +34,28 @@ function handleEvent(event) {
 function handleMessageEvent(event) {
   var eventText = event.message.text.toLowerCase();
 
-  if (eventText === "โปรโมชั่น"){
+  if (eventText === "โปรโมชั่น") {
     msg = {
-        "type": "template",
-        "altText": "this is a confirm template",
-        "template": {
-            "type": "confirm",
-            "text": "Are you sure?",
-            "actions": [{
-                "type": "message",
-                "label": "Yes",
-                "text": "yes"
-            }, {
-                "type": "message",
-                "label": "No",
-                "text": "no"
-            }]
-        }
-    }
-  }
-  else if (eventText === "เมนูแนะนำ") {
+      type: "template",
+      altText: "โปรโมชั่น",
+      template: {
+        type: "confirm",
+        text: "Are you sure?",
+        actions: [
+          {
+            type: "message",
+            label: "Yes",
+            text: "yes"
+          },
+          {
+            type: "message",
+            label: "No",
+            text: "no"
+          }
+        ]
+      }
+    };
+  } else if (eventText === "เมนูแนะนำ") {
     msg = {
       type: "image",
       originalContentUrl:
@@ -61,106 +63,140 @@ function handleMessageEvent(event) {
       previewImageUrl:
         "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
     };
-  }
-  else if (eventText === "สั่งอาหาร")
+  } else if (eventText === "สั่งอาหาร")
     var msg = {
       type: "template",
-      altText: "this is a buttons template",
+      altText: "สั่งอาหาร",
       template: {
-        type: "buttons",
-        thumbnailImageUrl:
-          "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
-        title: "Menu",
-        text: "Please select",
-        actions: [
+        type: "carousel",
+        actions: [],
+        columns: [
           {
-            type: "postback",
-            label: "Buy",
-            data: "action=buy&itemid=123"
+            thumbnailImageUrl:
+              "http://postfiles8.naver.net/MjAxODAxMjRfMTg2/MDAxNTE2NzgwMDEyMTYw.5FIcKqzP0B5Cf3o0yd8DXX2lpI0WXQ4uEP6rSnOe0Pgg.oWHdoV_QXXes9SctFAz6Venn-mfxUlaQZapF9gyyhwMg.JPEG.destroyerx/spaghetti-1987454_1920.jpg?type=w2",
+            title: "                     Pasta",
+            text: "        Choose the menu below",
+            actions: [
+              {
+                type: "message",
+                label: "Tomato Pasta",
+                text: "Tomato Pasta"
+              },
+              {
+                type: "message",
+                label: "Olive Pasta",
+                text: "Olive Pasta"
+              }
+            ]
           },
           {
-            type: "postback",
-            label: "Add to cart",
-            data: "action=add&itemid=123"
+            thumbnailImageUrl:
+              "https://postfiles.pstatic.net/MjAxODAxMTJfMjgy/MDAxNTE1NzM5ODgyMzU2.uno8L7N4v3xk-16ormEE1RMZ2PEgS0olVXUYcMOhCY8g.elB-yyuOlN6-NnbejDQ9ru-kkf88YaxJUFst-3ssLisg.JPEG.destroyerx/pizza-2766487_1920.jpg?type=w2",
+            title: "                     Pizza",
+            text: "        Choose the menu below",
+            actions: [
+              {
+                type: "message",
+                label: "Super Supreme Pizza",
+                text: "Super Supreme Pizza"
+              },
+              {
+                type: "message",
+                label: "Peperoni",
+                text: "Peperoni"
+              }
+            ]
           },
           {
-            type: "uri",
-            label: "View detail",
-            uri: "http://example.com/page/123"
+            thumbnailImageUrl:
+              "https://postfiles.pstatic.net/MjAxODAxMTJfMzEg/MDAxNTE1NzMxODE3Mjgw.rROrcD8PQYk_febepsveurYQveHdhx6ljWTyYWLyQmQg.WFflEpeSmkYHqbkwieaj2Kda2D8zuWjqbQrrO7jJwKQg.JPEG.destroyerx/sally's_brunch.jpg?type=w2",
+            title: "                     Steak",
+            text: "       Choose the menu below",
+            actions: [
+              {
+                type: "message",
+                label: "T-Bone Steak",
+                text: "T-Bone Steak"
+              },
+              {
+                type: "message",
+                label: "Ribeye Steak",
+                text: "Ribeye Steak"
+              }
+            ]
           }
         ]
       }
     };
-
-  else if (eventText === 'จองห้องคาราโอเกะ'){
+  else if (eventText === "จองห้องคาราโอเกะ") {
     msg = {
-        "type": "template",
-        "altText": "this is a carousel template",
-        "template": {
-            "type": "carousel",
-            "columns": [
-                {
-                    "thumbnailImageUrl": "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
-                    "title": "this is menu",
-                    "text": "description",
-                    "actions": [
-                        {
-                            "type": "postback",
-                            "label": "Buy",
-                            "data": "action=buy&itemid=111"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "Add to cart",
-                            "data": "action=add&itemid=111"
-                        },
-                        {
-                            "type": "uri",
-                            "label": "View detail",
-                            "uri": "http://example.com/page/111"
-                        }
-                    ]
-                },
-                {
-                    "thumbnailImageUrl": "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
-                    "title": "this is menu",
-                    "text": "description",
-                    "actions": [
-                        {
-                            "type": "postback",
-                            "label": "Buy",
-                            "data": "action=buy&itemid=222"
-                        },
-                        {
-                            "type": "postback",
-                            "label": "Add to cart",
-                            "data": "action=add&itemid=222"
-                        },
-                        {
-                            "type": "uri",
-                            "label": "View detail",
-                            "uri": "http://example.com/page/222"
-                        }
-                    ]
-                }
+      type: "template",
+      altText: "จองห้องคาราโอเกะ",
+      template: {
+        type: "carousel",
+        columns: [
+          {
+            thumbnailImageUrl:
+              "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
+            title: "this is menu",
+            text: "description",
+            actions: [
+              {
+                type: "postback",
+                label: "Buy",
+                data: "action=buy&itemid=111"
+              },
+              {
+                type: "postback",
+                label: "Add to cart",
+                data: "action=add&itemid=111"
+              },
+              {
+                type: "uri",
+                label: "View detail",
+                uri: "http://example.com/page/111"
+              }
             ]
-        }
-    }
-  }
-  else if (eventText === 'ประวัติการสั่งซื้อ'){
-    msg = {
-        "type": "sticker",
-        "packageId": "1",
-        "stickerId": "2568"
+          },
+          {
+            thumbnailImageUrl:
+              "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
+            title: "this is menu",
+            text: "description",
+            actions: [
+              {
+                type: "postback",
+                label: "Buy",
+                data: "action=buy&itemid=222"
+              },
+              {
+                type: "postback",
+                label: "Add to cart",
+                data: "action=add&itemid=222"
+              },
+              {
+                type: "uri",
+                label: "View detail",
+                uri: "http://example.com/page/222"
+              }
+            ]
+          }
+        ]
       }
-  }
-  else if (eventText === 'ร้านปรีดาโภชนา') {
+    };
+  } else if (eventText === "ประวัติการสั่งซื้อ") {
     msg = {
-        "type": "location",
-        "title": "my location",
-        "address": "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
-        "latitude": 35.65910807942215,
-        "longitude": 139.70372892916203
+      type: "text",
+      text:
+        "Here is your reservation details.\n\n1. Date : 170201\n2. Name : LINE\n3. Time : PM:7:00\n4. The Number of People : 3\n5. Specific requirement : baby seat\n6. Menu : Tomato Pasta, T-bone Steak\n\n\nYour Reservation has been done. \nWe will do our best to serve you. Thank you."
+    };
+  } else if (eventText === "ร้านปรีดาโภชนา") {
+    msg = {
+      type: "location",
+      title: "ร้านปรีดาโภชนา",
+      address: "ถนน สุขุมวิท ตำบล บางพระ อำเภอเมืองตราด ตราด 23000 ประเทศไทย ตราด",
+      latitude: 12.2498062,
+      longitude: 102.5103845
     };
   }
   return client.replyMessage(event.replyToken, msg);
