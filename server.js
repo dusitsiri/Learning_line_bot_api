@@ -69,7 +69,7 @@ function handleMessageEvent(event) {
       altText: "สั่งอาหาร",
       template: {
         type: "carousel",
-        actions: [],
+        // actions: [],
         columns: [
           {
             thumbnailImageUrl:
