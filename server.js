@@ -63,7 +63,7 @@ function handleMessageEvent(event) {
       previewImageUrl:
         "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
     };
-  } else if (eventText === "สั่งอาหาร")
+  } else if (eventText === "สั่งอาหาร") {
     var msg = {
       type: "template",
       altText: "สั่งอาหาร",
@@ -128,7 +128,7 @@ function handleMessageEvent(event) {
         ]
       }
     };
-  else if (eventText === "จองห้องคาราโอเกะ") {
+  } else if (eventText === "จองห้องคาราโอเกะ") {
     msg = {
       type: "template",
       altText: "จองห้องคาราโอเกะ",
@@ -194,7 +194,8 @@ function handleMessageEvent(event) {
     msg = {
       type: "location",
       title: "ร้านปรีดาโภชนา",
-      address: "ถนน สุขุมวิท ตำบล บางพระ อำเภอเมืองตราด ตราด 23000 ประเทศไทย ตราด",
+      address:
+        "ถนน สุขุมวิท ตำบล บางพระ อำเภอเมืองตราด ตราด 23000 ประเทศไทย ตราด",
       latitude: 12.2498062,
       longitude: 102.5103845
     };
