@@ -35,7 +35,7 @@ function handleMessageEvent(event) {
   var eventText = event.message.text.toLowerCase();
 
   if (eventText === "โปรโมชั่น") {
-    msg = {
+  var msg = {
       type: "template",
       altText: "โปรโมชั่น",
       template: {
@@ -56,7 +56,7 @@ function handleMessageEvent(event) {
       }
     };
   } else if (eventText === "เมนูแนะนำ") {
-    msg = {
+  var msg = {
       type: "image",
       originalContentUrl:
         "https://www.thesun.co.uk/wp-content/uploads/2017/03/fifa-17-2.jpg?strip=all&w=742&quality=100",
@@ -64,9 +64,9 @@ function handleMessageEvent(event) {
         "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
     };
   } else if (eventText === "สั่งอาหาร") {
-    msg = {
+    var msg = {
       type: "template",
-      altText: "this is a carousel template",
+      altText: "สั่งอาหาร",
       template: {
         type: "carousel",
         actions: [],
@@ -129,7 +129,7 @@ function handleMessageEvent(event) {
       }
     };
   } else if (eventText === "จองห้องคาราโอเกะ") {
-    msg = {
+  var msg = {
       type: "template",
       altText: "จองห้องคาราโอเกะ",
       template: {
@@ -185,13 +185,13 @@ function handleMessageEvent(event) {
       }
     };
   } else if (eventText === "ประวัติการสั่งซื้อ") {
-    msg = {
+   var msg = {
       type: "text",
       text:
         "Here is your reservation details.\n\n1. Date : 170201\n2. Name : LINE\n3. Time : PM:7:00\n4. The Number of People : 3\n5. Specific requirement : baby seat\n6. Menu : Tomato Pasta, T-bone Steak\n\n\nYour Reservation has been done. \nWe will do our best to serve you. Thank you."
     };
   } else if (eventText === "ร้านปรีดาโภชนา") {
-    msg = {
+   var msg = {
       type: "location",
       title: "ร้านปรีดาโภชนา",
       address:
