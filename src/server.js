@@ -4,6 +4,8 @@ require("dotenv").config();
 const express = require("express");
 const line = require("@line/bot-sdk");
 
+const firestore = require("./firebaseHelper.js");
+
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelSecret: process.env.CHANNEL_SECRET
@@ -40,6 +42,7 @@ function handleFollowEvent(event) {
     console.log(profile.userId);
     console.log(profile.pictureUrl);
     console.log(profile.statusMessage);
+    firestore.addUserFollow(profile)
   })
   .catch((err) => {
     // error handling
