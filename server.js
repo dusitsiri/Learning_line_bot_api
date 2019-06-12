@@ -66,7 +66,7 @@ function handleMessageEvent(event) {
   } else if (eventText === "สั่งอาหาร") {
     var msg = {
       type: "template",
-      altText: "จองห้องคาราโอเกะ",
+      altText: "สั่งอาหาร",
       template: {
         type: "carousel",
         columns: [
