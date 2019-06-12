@@ -69,7 +69,6 @@ function handleMessageEvent(event) {
       altText: "สั่งอาหาร",
       template: {
         type: "carousel",
-        // actions: [],
         columns: [
           {
             thumbnailImageUrl:
@@ -107,24 +106,24 @@ function handleMessageEvent(event) {
               }
             ]
           },
-          {
-            thumbnailImageUrl:
-              "https://postfiles.pstatic.net/MjAxODAxMTJfMzEg/MDAxNTE1NzMxODE3Mjgw.rROrcD8PQYk_febepsveurYQveHdhx6ljWTyYWLyQmQg.WFflEpeSmkYHqbkwieaj2Kda2D8zuWjqbQrrO7jJwKQg.JPEG.destroyerx/sally's_brunch.jpg?type=w2",
-            title: "                     Steak",
-            text: "       Choose the menu below",
-            actions: [
-              {
-                type: "message",
-                label: "T-Bone Steak",
-                text: "T-Bone Steak"
-              },
-              {
-                type: "message",
-                label: "Ribeye Steak",
-                text: "Ribeye Steak"
-              }
-            ]
-          }
+        //   {
+        //     thumbnailImageUrl:
+        //       "https://postfiles.pstatic.net/MjAxODAxMTJfMzEg/MDAxNTE1NzMxODE3Mjgw.rROrcD8PQYk_febepsveurYQveHdhx6ljWTyYWLyQmQg.WFflEpeSmkYHqbkwieaj2Kda2D8zuWjqbQrrO7jJwKQg.JPEG.destroyerx/sally's_brunch.jpg?type=w2",
+        //     title: "                     Steak",
+        //     text: "       Choose the menu below",
+        //     actions: [
+        //       {
+        //         type: "message",
+        //         label: "T-Bone Steak",
+        //         text: "T-Bone Steak"
+        //       },
+        //       {
+        //         type: "message",
+        //         label: "Ribeye Steak",
+        //         text: "Ribeye Steak"
+        //       }
+        //     ]
+        //   }
         ]
       }
     };
