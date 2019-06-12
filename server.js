@@ -34,8 +34,7 @@ function handleEvent(event) {
 }
 
 function handleFollowEvent(event) {
-  var eventFollow = event.follow;
-  client.getProfile(eventFollow.source.userId)
+  client.getProfile(event.source.userId)
   .then((profile) => {
     console.log(profile.displayName);
     console.log(profile.userId);
