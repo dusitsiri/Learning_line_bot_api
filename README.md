@@ -15,12 +15,6 @@ $ yarn add express
 $ yarn add @line/bot-sdk
 ```
 
-### Add firebase-admin
-
-```
-$ yarn add firebase-admin
-```
-
 ### Add dotenv
 
 [dotenv](https://github.com/motdotla/dotenv#readme) is a zero-dependency module that loads environment variables from a .env file into process.env.
@@ -95,4 +89,29 @@ $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
 ```
+
+### Connect Cloud Firestore
+
+1. Add firebase-admin dependencies
+
+```
+$ yarn add firebase-admin
+```
+
+2. Create ```firebaseHelper.js``` then follow this:
+
+```
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://learning-line-bot-api.firebaseio.com"
+});
+```
+3. Generate New Private Key in your firebase project
+
+
+
 

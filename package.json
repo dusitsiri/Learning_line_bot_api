@@ -8,11 +8,11 @@
     "@line/bot-sdk": "^6.7.1",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "firebase-admin": "^8.0.0",
+    "firebase-admin": "^8.1.0",
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   }
 }
