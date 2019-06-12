@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const admin = require("firebase-admin");
-const serviceAccount = require("learning-line-bot-api-firebase-adminsdk-d8o28-ad6166c3c5.json");
+const serviceAccount = require("./learning-line-bot-api-firebase-adminsdk-d8o28-ad6166c3c5.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
