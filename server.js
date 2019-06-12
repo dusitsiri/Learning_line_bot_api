@@ -26,9 +26,25 @@ function handleEvent(event) {
   console.log(event);
   if (event.type === "message" && event.message.type === "text") {
     handleMessageEvent(event);
+  } else if (event.type === "follow") {
+    handleFollowEvent(event);
   } else {
     return Promise.resolve(null);
   }
+}
+
+function handleFollowEvent(event) {
+  var eventFollow = event.follow;
+  client.getProfile(eventFollow.replyToken)
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+  });
 }
 
 function handleMessageEvent(event) {
