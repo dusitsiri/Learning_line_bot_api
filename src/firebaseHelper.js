@@ -8,17 +8,19 @@ admin.initializeApp({
   databaseURL: "https://learning-line-bot-api.firebaseio.com"
 });
 
+const db = admin.firestore();
+
 function addUserFollow(profile) {
-  var collectionRef = firestore.collection("user_follow");
-  collectionRef
-    .add({
-      displayName: profile.displayName,
-      userId: profile.userId,
-      pictureUrl: profile.pictureUrl,
-      statusMessage: profile.statusMessage
+    db.collection('user_follow').add({
+        displayName: profile.displayName,
+        userId: profile.userId,
+        pictureUrl: profile.pictureUrl,
+        statusMessage: profile.statusMessage
+    }).then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
     })
-    .then(documentReference => {
-      console.log(`Added document with name: ${documentReference.id}`);
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
     });
 }
 
