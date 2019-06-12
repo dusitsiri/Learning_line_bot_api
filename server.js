@@ -64,9 +64,9 @@ function handleMessageEvent(event) {
         "https://images.performgroup.com/di/library/GOAL/a6/bb/fifa-18-ronaldo_lx3r88bpjpk91re36ukdgomrj.jpg?t=2027563652&w=620&h=430"
     };
   } else if (eventText === "สั่งอาหาร") {
-    var msg = {
+    msg = {
       type: "template",
-      altText: "สั่งอาหาร",
+      altText: "this is a carousel template",
       template: {
         type: "carousel",
         actions: [],
